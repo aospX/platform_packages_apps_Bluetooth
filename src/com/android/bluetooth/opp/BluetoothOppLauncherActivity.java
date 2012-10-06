@@ -41,6 +41,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothDevicePicker;
 import android.content.Intent;
 import android.content.ContentResolver;
@@ -89,7 +90,7 @@ public class BluetoothOppLauncherActivity extends Activity {
                     // Save type/stream, will be used when adding transfer
                     // session to DB.
                     BluetoothOppManager.getInstance(this).saveSendingFileInfo(type,
-                            stream.toString());
+                            stream.toString(), false);
                 } else if (extra_text != null && type != null) {
                     if (V) Log.v(TAG, "Get ACTION_SEND intent with Extra_text = "
                                 + extra_text.toString() + "; mimetype = " + type);
@@ -97,7 +98,7 @@ public class BluetoothOppLauncherActivity extends Activity {
 
                     if (fileUri != null) {
                         BluetoothOppManager.getInstance(this).saveSendingFileInfo(type,
-                                fileUri.toString());
+                                fileUri.toString(), false);
                     }
                 } else {
                     Log.e(TAG, "type is null; or sending file URI is null");
@@ -111,7 +112,8 @@ public class BluetoothOppLauncherActivity extends Activity {
                 if (mimeType != null && uris != null) {
                     if (V) Log.v(TAG, "Get ACTION_SHARE_MULTIPLE intent: uris " + uris + "\n Type= "
                                 + mimeType);
-                    BluetoothOppManager.getInstance(this).saveSendingFileInfo(mimeType, uris);
+                    BluetoothOppManager.getInstance(this).saveSendingFileInfo(mimeType,
+                            uris, false);
                 } else {
                     Log.e(TAG, "type is null; or sending files URIs are null");
                     finish();

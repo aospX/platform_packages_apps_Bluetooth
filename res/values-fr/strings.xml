@@ -18,6 +18,10 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="permlab_bluetoothShareManager" msgid="311492132450338925">"Accéder au gestionnaire de téléchargement"</string>
     <string name="permdesc_bluetoothShareManager" msgid="8930572979123190223">"Permet à l\'application d\'accéder au gestionnaire BluetoothShare et de l\'utiliser pour le transfert de fichiers."</string>
+    <string name="permlab_bluetoothWhitelist" msgid="7091552898592306386">"Ajouter des appareils Bluetooth à la liste blanche"</string>
+    <string name="permdesc_bluetoothWhitelist" msgid="5494513855192170109">"Permet à l\'application d\'ajouter temporairement un appareil Bluetooth à la liste blanche. Ainsi, celui-ci peut envoyer des fichiers à cet appareil sans que la confirmation de l\'utilisateur ne soit nécessaire."</string>
+    <string name="permlab_handoverStatus" msgid="7316032998801933554">"Recevoir des messages concernant les transferts Bluetooth"</string>
+    <string name="permdesc_handoverStatus" msgid="4752738070064786310">"Permet la réception d\'informations concernant l\'état du transfert via Bluetooth."</string>
     <string name="bt_share_picker_label" msgid="6268100924487046932">"Bluetooth"</string>
     <string name="unknown_device" msgid="9221903979877041009">"Périphérique inconnu"</string>
     <string name="unknownNumber" msgid="4994750948072751566">"Inconnu"</string>
@@ -96,7 +100,7 @@
     <string name="status_connection_error" msgid="947681831523219891">"Échec de la connexion."</string>
     <string name="status_protocol_error" msgid="3245444473429269539">"Impossible de traiter la demande correctement."</string>
     <string name="status_unknown_error" msgid="8156660554237824912">"Erreur inconnue."</string>
-    <string name="btopp_live_folder" msgid="7967791481444474554">"Bluetooth reçu"</string>
+    <string name="btopp_live_folder" msgid="7967791481444474554">"Reçu par Bluetooth"</string>
     <string name="download_success" msgid="7036160438766730871">"Réception de <xliff:g id="FILE_SIZE">%1$s</xliff:g> terminée"</string>
     <string name="upload_success" msgid="4014469387779648949">"Envoi de <xliff:g id="FILE_SIZE">%1$s</xliff:g> terminé"</string>
     <string name="inbound_history_title" msgid="6940914942271327563">"Transferts entrants"</string>

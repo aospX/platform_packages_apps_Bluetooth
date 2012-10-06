@@ -54,6 +54,7 @@ import android.widget.Toast;
  */
 public class BluetoothOppReceiver extends BroadcastReceiver {
     private static final String TAG = "BluetoothOppReceiver";
+    private static final boolean D = Constants.DEBUG;
     private static final boolean V = Constants.VERBOSE;
 
     @Override
@@ -225,6 +226,34 @@ public class BluetoothOppReceiver extends BroadcastReceiver {
             transInfo = BluetoothOppUtility.queryRecord(context, intent.getData());
             if (transInfo == null) {
                 Log.e(TAG, "Error: Can not get data from db");
+                return;
+            }
+
+            if (transInfo.mHandoverInitiated) {
+                // Deal with handover-initiated transfers separately
+                Intent handoverIntent = new Intent(Constants.ACTION_BT_OPP_TRANSFER_DONE);
+                if (transInfo.mDirection == BluetoothShare.DIRECTION_INBOUND) {
+                    handoverIntent.putExtra(Constants.EXTRA_BT_OPP_TRANSFER_DIRECTION,
+                            Constants.DIRECTION_BLUETOOTH_INCOMING);
+                } else {
+                    handoverIntent.putExtra(Constants.EXTRA_BT_OPP_TRANSFER_DIRECTION,
+                            Constants.DIRECTION_BLUETOOTH_OUTGOING);
+                }
+                handoverIntent.putExtra(Constants.EXTRA_BT_OPP_TRANSFER_ID, transInfo.mID);
+                handoverIntent.putExtra(Constants.EXTRA_BT_OPP_ADDRESS, transInfo.mDestAddr);
+
+                if (BluetoothShare.isStatusSuccess(transInfo.mStatus)) {
+                    handoverIntent.putExtra(Constants.EXTRA_BT_OPP_TRANSFER_STATUS,
+                            Constants.HANDOVER_TRANSFER_STATUS_SUCCESS);
+                    handoverIntent.putExtra(Constants.EXTRA_BT_OPP_TRANSFER_URI,
+                            transInfo.mFileName);
+                    handoverIntent.putExtra(Constants.EXTRA_BT_OPP_TRANSFER_MIMETYPE,
+                            transInfo.mFileType);
+                } else {
+                    handoverIntent.putExtra(Constants.EXTRA_BT_OPP_TRANSFER_STATUS,
+                            Constants.HANDOVER_TRANSFER_STATUS_FAILURE);
+                }
+                context.sendBroadcast(handoverIntent, Constants.HANDOVER_STATUS_PERMISSION);
                 return;
             }
 

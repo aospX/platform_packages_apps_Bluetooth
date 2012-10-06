@@ -18,6 +18,10 @@
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="permlab_bluetoothShareManager" msgid="311492132450338925">"Acceso al administrador de descargas"</string>
     <string name="permdesc_bluetoothShareManager" msgid="8930572979123190223">"Permite que la aplicación acceda al administrador BluetoothShare y lo use para transferir archivos."</string>
+    <string name="permlab_bluetoothWhitelist" msgid="7091552898592306386">"Acceso de dispositivos Bluetooth autorizados"</string>
+    <string name="permdesc_bluetoothWhitelist" msgid="5494513855192170109">"Permite que la aplicación autorice temporalmente a un dispositivo Bluetooth para que pueda enviar archivos a este dispositivo sin la confirmación del usuario."</string>
+    <string name="permlab_handoverStatus" msgid="7316032998801933554">"Recibe emisiones de transferencias Bluetooth."</string>
+    <string name="permdesc_handoverStatus" msgid="4752738070064786310">"Permite que se reciba información sobre el estado de la transferencia del dispositivo Bluetooth."</string>
     <string name="bt_share_picker_label" msgid="6268100924487046932">"Bluetooth"</string>
     <string name="unknown_device" msgid="9221903979877041009">"Dispositivo desconocido"</string>
     <string name="unknownNumber" msgid="4994750948072751566">"Desconocido"</string>
@@ -90,7 +94,7 @@
     <string name="status_not_accept" msgid="1695082417193780738">"Contenido no admitido"</string>
     <string name="status_forbidden" msgid="613956401054050725">"El dispositivo de destino no permite la transferencia."</string>
     <string name="status_canceled" msgid="6664490318773098285">"Transferencia cancelada por el usuario"</string>
-    <string name="status_file_error" msgid="3671917770630165299">"Incidencia relacionada con el almacenamiento"</string>
+    <string name="status_file_error" msgid="3671917770630165299">"Error relacionada con el almacenamiento"</string>
     <string name="status_no_sd_card" product="nosdcard" msgid="1112125377088421469">"Sin almacenamiento USB"</string>
     <string name="status_no_sd_card" product="default" msgid="5760944071743325592">"No se detecta ninguna tarjeta SD. Inserta una tarjeta SD y guarda los archivos transferidos."</string>
     <string name="status_connection_error" msgid="947681831523219891">"Conexión incorrecta"</string>
